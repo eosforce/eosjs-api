@@ -162,6 +162,13 @@
     },
     "results": "Set[public_key]"
   },
+  
+  "get_required_fee": {
+    "params": {
+      "transaction": "transaction"
+    },
+    "results": "asset"
+  },
 
   "push_block": {
     "brief": "Append a block to the chain database.",
