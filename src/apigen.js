@@ -2,7 +2,7 @@ require('isomorphic-fetch')
 const camelCase = require('camel-case')
 const helpers = require('./exported-helpers')
 const processArgs = require('./process-args')
-
+const code_json = require('./api/v1/code.json')
 module.exports = apiGen
 
 function apiGen (version, definitions, config) {
