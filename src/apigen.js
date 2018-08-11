@@ -61,8 +61,20 @@ function fetchMethod (methodName, url, definition, config) {
     }
     const fetchConfiguration = {body, method: 'POST'}
     Object.assign(fetchConfiguration, config.fetchConfiguration)
-
-    fetch(url, fetchConfiguration).then(response => {
+    let fetch_promise = null;
+    if(methodName == 'getCode'){
+      fetch_promise = new Promise((resolve, reject) => {
+        resolve({
+          status: 200,
+          json () {
+            return code_json;
+          }
+        });
+      });
+    }else{
+      fetch_promise = fetch(url, fetchConfiguration);
+    }
+    fetch_promise.then(response => {
       if (response.status >= 200 && response.status < 300) {
         return response.json()
       } else {
