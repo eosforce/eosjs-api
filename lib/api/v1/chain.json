@@ -105,6 +105,16 @@
     }
   },
 
+  "get_abi": {
+    "params": {
+      "account_name": "name"
+    },
+    "results": {
+      "account_name": "name",
+      "abi": "abi_def?"
+    }
+  },
+
   "get_table_rows": {
     "brief": "Fetch smart contract data from an account.",
     "params": {
