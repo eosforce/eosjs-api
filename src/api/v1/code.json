@@ -5,7 +5,25 @@
     "abi": {
         "version": "eosio::abi/1.0",
         "types": [],
-        "structs": [{
+        "structs": [
+        {
+            "name": "newaccount",
+            "base": "",
+            "fields": [{
+                "name": "creator",
+                "type": "account_name"
+            }, {
+                "name": "name",
+                "type": "account_name"
+            }, {
+                "name": "owner",
+                "type": "authority"
+            }, {
+                "name": "active",
+                "type": "authority"
+            }]
+        },
+        {
             "name": "transfer",
             "base": "",
             "fields": [{
@@ -178,6 +196,10 @@
             }]
         }],
         "actions": [{
+            "name": "newaccount",
+            "type": "newaccount",
+            "ricardian_contract": ""
+        },{
             "name": "transfer",
             "type": "transfer",
             "ricardian_contract": ""
